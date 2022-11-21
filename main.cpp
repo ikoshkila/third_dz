@@ -60,7 +60,7 @@ double itc_percent_lower_uppercase(std::string str){
         }
     }
     double out = (double)ucount / (double)lcount;
-    return out;
+    return out*100;
 }
 
 std::string itc_reverse_str(std::string str){
