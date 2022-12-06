@@ -1,4 +1,4 @@
-#include "ezstr.h"
+#include "str_easy.h"
 
 std::string itc_cmp_str(std::string str1, std::string str2, int num){
     long long len1 = itc_len(str1);
