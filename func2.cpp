@@ -1,27 +1,24 @@
 #include "ezstr.h"
 
 std::string itc_cmp_str(std::string str1, std::string str2, int num){
-    std::string out;
-    long long len2 = itc_len(str2);
-    if(num > len2-1){
+    long long len1 = itc_len(str1);
+    if(len1 < num || num < 0 ){
         return str1;
     }
-    long long j = 0;
-    long long i = 0;
-    while(i < itc_len(str1)){
-        if(i < num){
-            out += str1[i];
-            i++;
-        }
-        if(i >= num && j < len2){
-            out += str2[j];
-            j++;
-        
-        }
-        if(j >= len2){
-            out += str1[i];
-            i++;
-        }
+    long long len2 = itc_len(str2);
+    std::string out1;
+    for(int i = 0; i < num; i++){
+        out1 += str1[i];
+    }
+    for(int i = 0; i < len2; i++){
+        out1 += str2[i];
+    }
+    for(int i = num; str1[i] != '\0'; i++){
+        out1 += str1[i];
+    }
+    std::string out;
+    for(int i = 0; i < len1; i++){
+        out += out1[i];
     }
     return out;
 }
